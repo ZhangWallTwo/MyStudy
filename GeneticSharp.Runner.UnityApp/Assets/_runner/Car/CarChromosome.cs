@@ -9,7 +9,7 @@ namespace GeneticSharp.Runner.UnityApp.Car
         public CarChromosome(CarSampleConfig config)
         {
             m_config = config;
-
+            int test = 1;
             var phenotypeEntities = new CarVectorPhenotypeEntity[config.VectorsCount];
 
             for (int i = 0; i < phenotypeEntities.Length; i ++)
