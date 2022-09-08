@@ -10,7 +10,7 @@ namespace GeneticSharp.Extensions.Tsp
         public TspChromosome(int numberOfCities) : base(numberOfCities)
         {
             m_numberOfCities = numberOfCities;
-            var citiesIndexes = RandomizationProvider.Current.GetUniqueInts(numberOfCities, 0, numberOfCities);
+            var citiesIndexes = RandomizationProvider.Current.GetUniqueInts(numberOfCities, 0, numberOfCities);//Unique¿Ø¿œ«‘
 
             for (int i = 0; i < numberOfCities; i++)
             {

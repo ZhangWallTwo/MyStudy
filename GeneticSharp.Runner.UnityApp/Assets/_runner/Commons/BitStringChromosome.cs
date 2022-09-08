@@ -89,12 +89,16 @@ namespace GeneticSharp.Runner.UnityApp.Commons
             //string test = "00000011";
             //int rst = Convert.ToInt32(test, 2);
 
+
             //int result = Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString(),2);
             //Console.WriteLine(result);
-            string tes = m_originalValueStringRepresentation;
-            int size = tes.Length;
+
+
+            //string tes = m_originalValueStringRepresentation;
+            //int size = tes.Length;
             List<char> rst = ConvertStringToInt();
-            int test = 1;
+            //int test = 1;
+
             return new Gene(Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString()));//2Áø¼ö ³ª¿È!!
         }
 
@@ -114,7 +118,7 @@ namespace GeneticSharp.Runner.UnityApp.Commons
                 }
                 str = str.Remove(0, 8);
                 int tmp = Convert.ToInt32(binaryNumbers, 2);
-                decimalNumbers += tmp.ToString();
+                //decimalNumbers += tmp.ToString();
                 binaryNumbers = "";
             }
             List<char> result = new List<char> { };

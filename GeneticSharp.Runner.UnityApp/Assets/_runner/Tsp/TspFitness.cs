@@ -21,7 +21,7 @@ namespace GeneticSharp.Extensions.Tsp
 
             if (maxX >= int.MaxValue)
             {
-                throw new ArgumentOutOfRangeException("maxX");
+                throw new ArgumentOutOfRangeException("maxX");//throw 예외 처리/던지기
             }
 
             if (maxY >= int.MaxValue)
@@ -59,15 +59,16 @@ namespace GeneticSharp.Extensions.Tsp
 
                 citiesIndexes.Add(lastCityIndex);
             }
-
+            
+            int a= 1;
             distanceSum += CalcDistanceTwoCities(Cities[citiesIndexes.Last()], Cities[citiesIndexes.First()]);
 
-            var fitness = 1.0 - (distanceSum / (Cities.Count * 1000.0));
+            var fitness = 1.0 - (distanceSum / (Cities.Count * 1000.0));//!!!
 
             ((TspChromosome)chromosome).Distance = distanceSum;
 
             // There is repeated cities on the indexes?
-            var diff = Cities.Count - citiesIndexes.Distinct().Count();
+            var diff = Cities.Count - citiesIndexes.Distinct().Count();//!!!
 
             if (diff > 0)
             {
