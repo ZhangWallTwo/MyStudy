@@ -20,13 +20,13 @@ namespace GeneticSharp.Runner.UnityApp.Tsp
        
         private LineRenderer m_lr;
         public Object CityPrefab;
-        public int m_numberOfCities = 50;
+        public int m_numberOfCities =50;
       
         protected override GeneticAlgorithm CreateGA()
         {
             var size = (int)Camera.main.orthographicSize - 1;
-            m_fitness = new TspFitness(m_numberOfCities, -size, size, -size, size);
-            var chromosome = new TspChromosome(m_numberOfCities);
+            m_fitness = new TspFitness(m_numberOfCities, -size, size, -size, size);//m_numberOfCities
+            var chromosome = new TspChromosome(m_numberOfCities);//
             var crossover = new OrderedCrossover();
             var mutation = new ReverseSequenceMutation();
             var selection = new RouletteWheelSelection();

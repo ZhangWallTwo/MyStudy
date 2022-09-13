@@ -42,7 +42,7 @@ namespace GeneticSharp.Runner.UnityApp.Car
         {
             NumberOfSimultaneousEvaluations = SimulationsGrid.x * SimulationsGrid.y;
             m_fitness = new CarFitness();
-            var chromosome = new CarChromosome(Config);      
+            var chromosome = new CarChromosome(Config);   //   
             var crossover = new UniformCrossover();
             var mutation = new FlipBitMutation();
             var selection = new EliteSelection();
@@ -86,12 +86,13 @@ namespace GeneticSharp.Runner.UnityApp.Car
                 c.Evaluated = true;
             }
 
-               
+            int result = m_fitness.ChromosomesToBeginEvaluation.Count;//test:result=16
+
             // in evaluation.
-            while (m_fitness.ChromosomesToBeginEvaluation.Count > 0)
+                while (m_fitness.ChromosomesToBeginEvaluation.Count > 0)//!!!!!!!!
             {
-                CarChromosome c;
-                m_fitness.ChromosomesToBeginEvaluation.TryTake(out c);
+                CarChromosome c;//2진수!!!
+                m_fitness.ChromosomesToBeginEvaluation.TryTake(out c);//!!!c가 채워줌
                 c.Evaluated = false;
                 c.MaxDistance = 0;
 

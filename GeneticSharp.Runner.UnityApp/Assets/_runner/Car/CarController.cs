@@ -24,7 +24,7 @@ namespace GeneticSharp.Runner.UnityApp.Car
 
         public float Distance { get; private set; }
         public float DistanceTime { get; set; }
-        public CarChromosome Chromosome { get; private set; }
+        public CarChromosome Chromosome { get; private set; }//!!!
 
         private void Awake()
         {

@@ -13,7 +13,7 @@ namespace GeneticSharp.Extensions.Tsp
     {
         public TspFitness(int numberOfCities, float minX, float maxX, float minY, float maxY)
         {
-            Cities = new List<TspCity>(numberOfCities);
+            Cities = new List<TspCity>(numberOfCities);//Cities
             MinX = minX;
             MaxX = maxX;
             MinY = minY;
@@ -47,7 +47,7 @@ namespace GeneticSharp.Extensions.Tsp
         {
             var genes = chromosome.GetGenes();
             var distanceSum = 0.0;
-            var lastCityIndex = Convert.ToInt32(genes[0].Value, CultureInfo.InvariantCulture);
+            var lastCityIndex = Convert.ToInt32(genes[0].Value, CultureInfo.InvariantCulture);//genes[0]
             var citiesIndexes = new List<int>();
             citiesIndexes.Add(lastCityIndex);
 
@@ -65,6 +65,8 @@ namespace GeneticSharp.Extensions.Tsp
 
             var fitness = 1.0 - (distanceSum / (Cities.Count * 1000.0));//!!!
 
+
+            //var fitness = 
             ((TspChromosome)chromosome).Distance = distanceSum;
 
             // There is repeated cities on the indexes?

@@ -78,6 +78,30 @@ namespace GeneticSharp.Runner.UnityApp.Commons
             base.CreateGenes();
         }
 
+        //public override Gene GenerateGene(int geneIndex)//유전자 생성
+        //{
+        //    //Int32 test = Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString());//test
+        //    //int a = 1;//test
+
+        //    //Test
+        //    // 01001001/00010011
+        //    //    15     13
+        //    //string test = "00000011";
+        //    //int rst = Convert.ToInt32(test, 2);
+
+
+        //    //int result = Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString(),2);
+        //    //Console.WriteLine(result);
+
+
+        //    //string tes = m_originalValueStringRepresentation;
+        //    //int size = tes.Length;//216
+        //    List<char> rst = ConvertStringToInt();
+        //    //int test = 1;
+
+        //    return new Gene(Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString()));//2진수 나옴!!
+        //}
+
         public override Gene GenerateGene(int geneIndex)//유전자 생성
         {
             //Int32 test = Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString());//test
@@ -94,13 +118,16 @@ namespace GeneticSharp.Runner.UnityApp.Commons
             //Console.WriteLine(result);
 
 
-            //string tes = m_originalValueStringRepresentation;
-            //int size = tes.Length;
-            List<char> rst = ConvertStringToInt();
+            string tes = m_originalValueStringRepresentation;
+            int size = tes.Length;//216
+
+            ////List<char> rst = ConvertStringToInt();
             //int test = 1;
 
             return new Gene(Convert.ToInt32(m_originalValueStringRepresentation[geneIndex].ToString()));//2진수 나옴!!
         }
+
+
 
         public List<char> ConvertStringToInt()
         {
@@ -108,15 +135,15 @@ namespace GeneticSharp.Runner.UnityApp.Commons
             //test = test.Remove(0, 3);
             string str = m_originalValueStringRepresentation;
             string binaryNumbers = "";
-            string decimalNumbers = "";
+            //string decimalNumbers = "";
             while (str.Length!=0)
             {
-                for(int i=0; i < 8; i++)
+                for(int i=0; i < 32; i++)
                 {
                     binaryNumbers += str[i];
 
                 }
-                str = str.Remove(0, 8);
+                str = str.Remove(0, 32);
                 int tmp = Convert.ToInt32(binaryNumbers, 2);
                 //decimalNumbers += tmp.ToString();
                 binaryNumbers = "";
